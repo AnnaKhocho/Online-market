@@ -1,0 +1,660 @@
+@font-face{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src:url(./fonts/Montserrat-Regular.ttf);
+}
+
+
+@font-face{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src:url(./fonts/Montserrat-Medium.ttf);
+}
+
+@font-face{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src:url(./Montserrat/static/Montserrat-ExtraBold.ttf)
+}
+ 
+@font-face{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 900;
+    src:url(./fonts/Montserrat-Bold.ttf);
+}
+
+*, *::after, *::before  {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat;
+    margin: 0px;
+}
+
+
+.oglavlenie{
+    font-size: 36px;
+    text-decoration: underline;
+    font-family: Montserrat;
+    font-weight: 900;
+
+}
+
+.wrapper{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.zagalovok{
+    font-size: 16px;
+    text-decoration: underline;
+    margin: 0px;
+    padding-bottom: 20px;
+    padding-top: 25px;
+}
+
+.urovni{
+    font-size: 14px;
+    text-decoration: underline ;
+    width: 280px;
+}
+
+.kvadrat{
+    height:1px;
+    background-color:#E0E0E0;
+    display:block;
+
+}
+
+
+.urovenSlozhnosti{
+    margin-bottom: 23px;
+    cursor:pointer;
+    display: block;
+    position: relative;
+    padding-left: 25px;
+}
+
+.urovenSlozhnosti label{
+    cursor: pointer;
+}
+
+.urovenSlozhnosti label::before{
+    /*кругляшок*/
+    content:"";
+    display: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    background-image:linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    /* box-sizing: content-box;  */
+}
+
+
+.urovenSlozhnosti label::after{
+    /*рамка*/
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    top: 0px;
+    left: 0px;
+    /* box-sizing: content-box; */
+} 
+
+.urovenSlozhnosti input:checked ~ label::before{
+display: block;
+}
+
+.urovenSlozhnosti input:checked ~ label::after{
+    border: 2px solid #F7941D ;
+}
+
+.urovenSlozhnosti input:checked ~ label{
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+
+
+.polzunok{
+    transform: rotateY(180deg);
+    margin:-10px;
+    appearance: none;
+    background-image: linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    height: 4px;
+    border-radius: 5px;
+    
+}
+
+.knopka{
+    display: none;
+}
+
+.filtruDom{
+background-color: #F2F2F2;
+height: 51px;
+display: flex;
+font-weight:bold;
+padding-top: 17px;
+padding-left: 10px;
+justify-content: space-between;
+}
+
+
+
+/* ::-webkit-slider-thumb */
+
+
+.polzunok::-webkit-slider-thumb{
+    /* background-image: linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    border: 2.5px solid white ;
+    box-shadow: 0px 0px 0px 2.5px black;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+
+    border-radius: 50%;
+     */
+     -webkit-appearance: none;
+     appearance: none;
+     width: 40px;
+     height: 40px;
+     border: 0;
+     background: url("data:image/svg+xml,<svg width='40' height='40' viewBox='0 0 63 63' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='5.05025' y='31.2134' width='37' height='37' rx='18.5' transform='rotate(-45 5.05025 31.2134)' fill='%23FF9675' stroke='white' stroke-width='7'/><path d='M31.3357 40.8633L31.3357 22.0019' stroke='%231D1D1D' stroke-width='2' stroke-miterlimit='10'/><path d='M38.67 26.334C32.3829 26.334 31.335 18.999 31.335 18.999C31.335 18.999 30.2871 26.334 24 26.334' stroke='%231D1D1D' stroke-width='2' stroke-miterlimit='10' stroke-linejoin='bevel'/><path d='M38.67 35.5283C32.3829 35.5283 31.335 42.8633 31.335 42.8633C31.335 42.8633 30.2871 35.5283 24 35.5283' stroke='%231D1D1D' stroke-width='2' stroke-miterlimit='10' stroke-linejoin='bevel'/></svg>");
+     cursor: pointer;
+      
+
+}
+
+
+
+@media (min-width: 900px) {
+   .filtruDom{
+    display: none;
+   }
+    }
+
+
+.perecrut{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    background-color: #fff;
+}
+
+.krestik{
+    padding-right: 10px;
+
+}
+
+
+
+.golova{
+    background-color: #00093C;
+    height: 110px;
+
+    width: 100%;
+    
+    color: #fff;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500px;
+}
+
+.golova .wrapper {
+    display: flex;
+    /* padding: 20px;   */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zadanya{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+li{
+    display: inline-flex;
+    padding-left: 23px;
+}
+
+
+.img{
+    height: 100px;
+    width: 70px;
+}
+
+a{
+    position: relative;
+    color: #fff;
+    width: fit-content;
+    display: inline-block;
+}
+
+
+a::after{
+    content: "";
+    width: 100%;
+    display: none;
+    height: 4px;
+    background-color: #e41616;
+    position: absolute;
+    top: 61px;
+    left: 0px;
+    transform: 0.3s;
+}
+
+a:hover::after{
+  display: inline;  
+}
+
+ .gorod:hover .modalnoeOkno{
+    display: inline-block;
+    position: absolute;
+    top: 95%;
+    
+}
+
+.gorod{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+}
+
+.TbilisiClass{
+margin: 0 10px 0 10px;
+}
+
+.vhod2{
+    margin-left: 10px;
+}
+
+.vhod{
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 900px){
+    .buter{
+     display: none;
+    }
+}
+
+
+@media (max-width: 900px){
+    .spisok{
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    .gorod{
+        display: none;
+    }
+}
+
+@media (max-width: 900px){
+    .vhod{
+        display: none;
+    }
+}
+
+
+
+.vseTegi{
+    display:flex;
+    justify-content: space-between;
+     width: 100%;
+     padding: 14px;
+    align-items: flex-end;
+    cursor: pointer;
+
+}
+
+.oglavlenieTegi{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+
+}
+
+.oglavlenie{
+padding-bottom: 120px;
+display: inline-block;
+white-space: nowrap; 
+margin-top: 36px;
+margin-right: 75px;
+}
+
+.nachalo{
+display: flex;
+margin: 0px;
+}
+
+.children{
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.image{
+    margin-right:15px;
+}
+
+
+.children::after{
+    content: "";
+    width: 100%;
+    display: none;
+    height: 4px;
+    background-image: linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+    transform: 0.3s;
+    position: absolute;
+    left: 0px;
+    bottom: -14px;
+}
+
+.children:hover::after{
+    display: inline ; 
+}
+
+.nameNapravlenie{
+    text-decoration: underline;
+}
+
+.Napravlenie{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+    margin: 25px 0 25px 0;
+}
+
+.fonKnopka{
+background: linear-gradient(90deg, #F7941D 0%, #27AAE1 100%);
+opacity: 0.3;
+filter: blur(5px);
+border-radius: 10px;
+height: 100%;
+width: 100%;
+position: absolute;
+z-index: -1;
+
+}
+
+.umenyazakonchilisnasvania1{
+    position: relative;
+    z-index: 0;
+    margin: 0 20px 15px 0;
+}
+
+
+
+.osnovnoe{
+    display: flex;
+}
+
+.tegiknopki{
+    display: flex;	
+    flex-wrap: wrap;
+    margin:25px 0 0 0px;
+    
+
+}
+
+.Knopka1{
+    top: 0px;
+    left: 0px;
+
+}
+
+button{
+    appearance: none;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.btn {
+	display: inline-block;	
+	padding: 0 25px;
+	margin: 0px;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	height: 50px;
+	background-color: #fff;
+    cursor: pointer;
+	user-select: none;
+	touch-action: manipulation;  
+	vertical-align: top;
+	transition: 0.3s;
+    text-decoration: underline;
+}
+
+.btn:hover {
+	transition: 0.3s;
+	box-shadow: 0 7px 14px rgba(144, 77, 65, 0.1), 0 3px 6px rgb(235, 228, 228);
+}
+.btn:active {
+	background-color: #9209090c;
+}
+.btn:disabled {
+	background-color: #120000;
+	border-color: #cf1515;
+	cursor: not-allowed;
+}
+
+
+
+.MenayPugautEtiShtuki{
+    width:100%;
+    display: flex;
+    flex-wrap:wrap;
+
+}
+
+.programa{
+    font-size: 12px;
+}
+
+.kartochkText{
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.card{
+    background-color: #c7ffe9;
+    color: #00093C;
+    display:flex;
+    flex-direction: column;
+    padding: 28px 28px 32px 38px;
+    border: 1px solid #fff;
+	border-radius: 20px;
+    transition: box-shadow 0.3s;
+    outline: none;
+    width: 45%;
+    margin: 2%;
+}
+
+
+ .chasy{
+    display: flex;
+   align-items:end; 
+   font-size: 12px;
+ }
+
+.card:hover::after{
+    display: none;  
+  }
+
+  .programa{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    color: #4F4F4F;
+    padding: 3%;
+  }
+
+  .kartochkiText{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+   color: #00093C;
+  }
+    
+  .modalnoeOkno{
+    background-color:#F6F7F9;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px 0 #00000099;
+    padding: 20px;
+    position: absolute;
+    right: 20%;
+    bottom: 50px;
+    width: 226px;
+    height: 140px;
+    position:absolute;
+    top: 65px;
+   left: 0px;
+  }
+
+  
+
+  .knopkaModalnoe{
+    margin: 0 0 20px 0;
+    position: relative;
+  }
+
+
+  .knopkaModalnoe label{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    color: #4F4F4F;
+  }
+
+  .modalnoeOkno .knopkaModalnoe:last-child {
+    margin-bottom: 0;
+  }
+
+
+  
+  .knopka2{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1 solid black ;
+    position: relative;
+    top: 24px;
+    right: 5px;
+    z-index:1;
+    display: none;
+  }
+
+
+  .knopkaModalnoe label::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black ;
+    display: block;
+    margin: 0 10px 0 0;
+  }
+
+  .knopkaModalnoe label::after{
+    content:"";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 5.4px;
+    left: 4.4px;
+    display: none;
+  }
+
+
+  .knopkaModalnoe input:checked ~ label::after{
+    display: block;
+  }
+
+.pravoe{
+    margin-left: 20px;
+}
+
+.pictureTitle{
+    width: 100%;
+    display: flex;
+
+}
+
+.colorBlue{
+    background-color:#C7EEFF ;
+}
+
+.colorGreen{
+    background-color: #B8EFCF;
+}
+
+.colorYellow{
+    background-color:#FFE38E ;
+}
+
+.threePoint{
+display: inline-block;
+}
+
+.pagination button{
+height: 32px;
+width: 32px;
+border-radius: 4px;
+border: 1px solid #DFE3E8;
+background-color: #FFFFFF;
+cursor: pointer;
+margin-right: 8px;
+}
+
+.pagination button:last-child{
+    margin-right: 0px;
+}
+
+.pagination .activePage{
+    border: 1px solid #4200FF;
+    color: #4200FF;
+}
+
+.pagination .leftArrow{
+    transform: rotate(180deg);
+}
+
+.arrow:disabled{
+    background-color: #919EAB;
+    border: none;
+    opacity: 50%;
+    cursor: not-allowed;
+}
+.displayButton{
+    display: none;
+}
+
